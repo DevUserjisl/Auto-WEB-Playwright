@@ -1,0 +1,20 @@
+{
+  "default": {
+    "paths": ["src/resources/features/**/*.feature"],
+    "import": [
+      "src/hooks/world.ts",
+      "src/hooks/hooks.ts",
+      "src/stepdefinitions/**/*.ts"
+    ],
+    "loader": ["ts-node/esm"],
+    "format": [
+      "progress-bar",
+      "html:reports/cucumber-report.html",
+      "json:reports/cucumber-report.json"
+    ],
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    },
+    "publishQuiet": true
+  }
+}

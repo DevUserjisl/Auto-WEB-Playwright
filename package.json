@@ -1,0 +1,23 @@
+{
+  "name": "auto-web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test:e2e": "cross-env TS_NODE_PROJECT=tsconfig.e2e.json NODE_OPTIONS=\"--no-warnings\" cucumber-js",
+    "report": "node generate-report.mjs",
+    "test:full": "npm run test:e2e && npm run report"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.4.0",
+    "@playwright/test": "^1.57.0",
+    "@types/cucumber": "^6.0.1",
+    "@types/node": "^24.12.4",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2",
+    "multiple-cucumber-html-reporter": "^3.10.0",
+    "rimraf": "^6.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.9.3"
+  }
+}
