@@ -16,7 +16,7 @@
         ]
     },
     "include": [
-        "tests/**/*.ts"
+         "src/**/*.ts"
     ],
     "ts-node": {
         "esm": true,

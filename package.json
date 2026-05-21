@@ -3,19 +3,33 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "test:e2e": "cross-env TS_NODE_PROJECT=tsconfig.e2e.json NODE_OPTIONS=\"--no-warnings\" cucumber-js",
-    "report": "node generate-report.mjs",
-    "test:full": "npm run test:e2e && npm run report"
-  },
+
+"scripts": {
+
+  "clean": "rimraf target",
+
+  "test:e2e": "npm run clean && cross-env TS_NODE_PROJECT=tsconfig.e2e.json NODE_OPTIONS=\"--no-warnings\" cucumber-js",
+
+  "report:serenity": "serenity-bdd run",
+
+  "test": "npm run clean && npm run test:e2e && npm run report:serenity"
+
+},
+
   "devDependencies": {
-    "@cucumber/cucumber": "^12.4.0",
-    "@playwright/test": "^1.57.0",
-    "@types/cucumber": "^6.0.1",
+    "@cucumber/cucumber": "^10.9.0",
+    "@playwright/test": "1.51.1",
+    "@serenity-js/assertions": "3.31.0",
+    "@serenity-js/console-reporter": "3.31.0",
+    "@serenity-js/core": "3.31.0",
+    "@serenity-js/cucumber": "3.31.0",
+    "@serenity-js/playwright": "3.31.0",
+    "@serenity-js/serenity-bdd": "3.31.0",
+    "@serenity-js/web": "3.31.0",
     "@types/node": "^24.12.4",
     "cross-env": "^10.1.0",
     "dotenv": "^17.4.2",
-    "multiple-cucumber-html-reporter": "^3.10.0",
+    "playwright": "1.51.1",
     "rimraf": "^6.1.2",
     "ts-node": "^10.9.2",
     "typescript": "~5.9.3"
